@@ -1,0 +1,186 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  background: linear-gradient(to bottom, #0B5F89, #0A4F73);
+  padding: 30px 0;
+  width: 100%;
+}
+
+/* Container do conteúdo do header */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* Espaçamento entre imagem e texto */
+  margin-left: 2rem;
+}
+
+/* Imagem */
+.header-image {
+  width: 8rem; /* Ajuste fino conforme necessário */
+  height: auto;
+}
+
+/* Container de texto */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* para alinhar à esquerda */
+  justify-content: center;
+  line-height: 1;
+  margin-right: 2rem;
+  margin-top: 1rem;
+}
+
+/* Título */
+.logo-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.25px;
+  font-stretch: condensed; /* tentativa de “achatar” a fonte */
+}
+
+/* Subtítulo */
+.logo-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600; /* mais bold */
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  margin-top: 8px;
+  letter-spacing: 1.5px;
+  align-self: center; /* centraliza em relação ao título */
+}
+
+/*
+.gold-bar {
+  width: 100%;
+  height: 12px;
+  background: 
+    linear-gradient(to right, #B78B48, #EED197, #B78B48),
+    radial-gradient(circle at 10% 50%, #F8E3B2, transparent 30%),
+    radial-gradient(circle at 90% 50%, #F8E3B2, transparent 30%);
+  background-blend-mode: screen;
+}*/
+
+.gold-bar {
+  width: 100%;
+  height: 10px; /* Ajuste a altura como quiser */
+  background: url('./imagens/gold\ bar.png') no-repeat center;
+  background-size: cover;
+  filter: saturate(70%);
+
+}
+
+/* Fonte do Google Fonts se ainda não tiver */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+:root {
+  --gold-gradient: linear-gradient(to right, #d4af37, #fff9c4, #b8860b);
+  --marrom: #5a2d2e; /* cor da imagem */
+}
+
+/* --- MENU PRINCIPAL (DESKTOP) --- */
+#menu {
+  position: sticky;
+  top: 0; /* Fixo no topo após a gold bar */
+  width: 100%;
+  background: white; /* Fundo branco */
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem; /* Espaço entre itens */
+  margin: 0;
+  padding: 1rem 0;
+
+}
+
+#menu a {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #5a2d2e; /* Marrom */
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+/* Destaque dourado (usando a mesma imagem da gold bar) */
+#menu a.active {
+  color: #B9770E; /* Cor dourada quando ativo */
+  font-weight: 700;
+  border-bottom: 2px solid #B9770E; /* Opcional: linha abaixo do item */
+}
+
+.menu-toggle {
+  display: none; /* Oculta o ícone no desktop */
+}
+
+/* Responsividade simples */
+@media (max-width: 768px) {
+  .logo-title {
+    font-size: 2rem;
+  }
+  .logo-subtitle {
+    font-size: 0.8rem;
+   #menu {
+    padding: 0;
+  }
+
+ #menu {
+    justify-content: flex-start; /* Alinha o ícone à esquerda */
+    padding: 0;
+    height: auto; /* Altura automática */
+  }
+
+  #menu ul {
+    display: none; /* Esconde o menu inicialmente */
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #menu.active ul {
+    display: flex; /* Mostra o menu ao clicar */
+  }
+
+  #menu li {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  #menu a {
+    font-size: 1.1rem; /* Tamanho legível em mobile */
+    white-space: normal; /* Permite quebra de linha */
+    padding: 0.5rem 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #5a2d2e;
+  }
+}
+}
