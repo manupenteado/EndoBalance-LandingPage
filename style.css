@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
@@ -79,48 +81,37 @@ body {
   filter: saturate(70%);
 
 }
-
-/* Fonte do Google Fonts se ainda não tiver */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
-
-:root {
-  --gold-gradient: linear-gradient(to right, #d4af37, #fff9c4, #b8860b);
-  --marrom: #5a2d2e; /* cor da imagem */
-}
-
-/* --- MENU PRINCIPAL (DESKTOP) --- */
 #menu {
   position: sticky;
-  top: 0; /* Fixo no topo após a gold bar */
-  width: 100%;
-  background: white; /* Fundo branco */
+  top: 10px;
+  background: white;
   z-index: 999;
   display: flex;
   justify-content: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0; /* Espaçamento interno */
 }
-
 
 #menu ul {
   list-style: none;
   display: flex;
-  gap: 2rem; /* Espaço entre itens */
+  gap: 1.5rem; /* Reduzi o gap para evitar overflow */
   margin: 0;
-  padding: 1rem 0;
-
+  padding: 0;
+  flex-wrap: wrap; /* Permite quebra de linha se necessário */
+  justify-content: center;
 }
 
 #menu a {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem; /* Reduzi o tamanho da fonte */
+  color: #5a2d2e;
   text-decoration: none;
-  color: #5a2d2e; /* Marrom */
-  padding: 0.5rem 1rem;
-  position: relative;
+  white-space: nowrap; /* Evita quebra de linha em itens */
+  padding: 0.3rem 0.5rem; /* Reduzi o padding */
 }
 
-/* Destaque dourado (usando a mesma imagem da gold bar) */
 #menu a.active {
   color: #B9770E; /* Cor dourada quando ativo */
   font-weight: 700;
@@ -128,59 +119,87 @@ body {
 }
 
 .menu-toggle {
-  display: none; /* Oculta o ícone no desktop */
+  display: none;
 }
+
+
+
 
 /* Responsividade simples */
 @media (max-width: 768px) {
+    html, body {
+    width: 100%;
+    overflow-x: hidden; /* Impede scroll horizontal */
+    position: relative; /* Ancora todos os elementos absolutos */
+
+  }
   .logo-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .logo-subtitle {
     font-size: 0.8rem;
-   #menu {
-    padding: 0;
+    }
+
+#menu {
+    
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    box-shadow: none; /* Remove a sombra quando o menu está fechado */
   }
 
- #menu {
-    justify-content: flex-start; /* Alinha o ícone à esquerda */
-    padding: 0;
-    height: auto; /* Altura automática */
+  #menu.active {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Reaplica a sombra quando aberto */
+    position: relative; /* Contém o menu dentro do fluxo */
+
   }
 
   #menu ul {
-    display: none; /* Esconde o menu inicialmente */
+    display: none; /* Garante que comece oculto */
     flex-direction: column;
     gap: 0;
-    width: 100%;
-    background: white;
+    width: 100vw;
     position: absolute;
     top: 100%;
     left: 0;
+    right: 0;
+    background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding não some à largura */
+
   }
 
   #menu.active ul {
-    display: flex; /* Mostra o menu ao clicar */
+    display: flex; /* Só aparece ao clicar */
   }
 
   #menu li {
     width: 100%;
     text-align: center;
-    padding: 0.5rem 0;
+    padding: 0;
+    margin: 0;
   }
 
   #menu a {
-    font-size: 1.1rem; /* Tamanho legível em mobile */
-    white-space: normal; /* Permite quebra de linha */
-    padding: 0.5rem 1rem;
+    display: inline-block;
+    width: auto; /* Remove a largura total */
+    padding: 1rem;
+    font-size: 1.1rem;
+    white-space: normal;
+    border-bottom: 1px solid #f0f0f0; /* Linha divisória opcional */
   }
 
   .menu-toggle {
-    display: block;
-    padding: 1rem;
+    display: block; /* Garante que o ícone aparece */
+    background: none;
+    border: none;
     font-size: 1.5rem;
-    color: #5a2d2e;
+    cursor: pointer;
+    padding: 1rem;
   }
+  
 }
-}
+
