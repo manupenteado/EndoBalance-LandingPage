@@ -79,7 +79,9 @@ body {
   background: url('./imagens/gold\ bar.png') no-repeat center;
   background-size: cover;
   filter: saturate(70%);
-
+  position: sticky; /* Fixa durante o scroll */
+  top: 0; /* Alinha ao topo da viewport */
+  z-index: 1000; /* Garante que fique acima do conteúdo */
 }
 #menu {
   position: sticky;
@@ -125,8 +127,57 @@ body {
 
 
 
+main {
+  padding-top: 80px; /* Espaço para o menu fixo */
+}
+
+section {
+  min-height: 100vh;
+  padding: 60px 2rem;
+  position: relative;
+  margin-bottom: 40px; /* Espaço entre seções */
+}
+
+/* Papel de parede para desktop */
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./imagens/back-desktop.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+/* Conteúdo das seções (sobreposto ao background) */
+section > * {
+  position: relative;
+  z-index: 1;
+  color: #333; /* Cor do texto - ajuste conforme necessário */
+}
+
+
+
+
+
 /* Responsividade simples */
 @media (max-width: 768px) {
+
+ section {
+    padding: 40px 1rem;
+    margin-bottom: 30px;
+  }
+  
+  section::before {
+    background-image: url('./imagens/back-mobile.jpg');
+    background-attachment: scroll;
+  }
+
     html, body {
     width: 100%;
     overflow-x: hidden; /* Impede scroll horizontal */
@@ -140,41 +191,68 @@ body {
     font-size: 0.8rem;
     }
 
+.gold-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  }
+
+
+  .fixed-menu {
+  position: fixed !important;
+  top: 0;
+}
+
 #menu {
-    
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
     box-shadow: none; /* Remove a sombra quando o menu está fechado */
+     position: sticky;
+    top: 10px; /* Cola abaixo da faixa */
+    z-index: 1000;
+    height: 50px; /* Altura fixa para evitar saltos */
+    position: sticky;
+    width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
   }
 
   #menu.active {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Reaplica a sombra quando aberto */
-    position: relative; /* Contém o menu dentro do fluxo */
 
   }
 
-  #menu ul {
-    display: none; /* Garante que comece oculto */
-    flex-direction: column;
-    gap: 0;
-    width: 100vw;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Garante que padding não some à largura */
+#menu ul {
+  flex-direction: column;
+  gap: 0;
+  width: 100vw;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transform: translateY(-30px);
+  opacity: 0;
+  pointer-events: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, max-height 0.3s ease;
+}
 
-  }
+#menu.active ul {
+  transform: translateY(-30px);
+  opacity: 1;
+  pointer-events: auto;
+  max-height: 500px; /* altura máxima esperada do menu — ajuste se necessário */
+}
 
-  #menu.active ul {
-    display: flex; /* Só aparece ao clicar */
-  }
 
   #menu li {
     width: 100%;
@@ -186,7 +264,7 @@ body {
   #menu a {
     display: inline-block;
     width: auto; /* Remove a largura total */
-    padding: 1rem;
+    padding: 0.6rem;
     font-size: 1.1rem;
     white-space: normal;
     border-bottom: 1px solid #f0f0f0; /* Linha divisória opcional */
@@ -196,9 +274,11 @@ body {
     display: block; /* Garante que o ícone aparece */
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor: pointer;
     padding: 1rem;
+    z-index: 1002; /* Acima de tudo */
+
   }
   
 }
