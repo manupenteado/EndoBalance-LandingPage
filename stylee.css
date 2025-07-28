@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+ background: linear-gradient(to bottom, #0B5F89, #0A4F73);
+  color: #ffffff;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.caution-top,
+.caution-bottom {
+  width: 100%;
+  height: 150px; /* ⬅️ Aumentado */
+  background-image: url('imagens/caution-tape.png');
+  background-repeat: repeat-x;
+  background-size: auto 250px; /* ⬅️ Altura da imagem ajustada */
+  background-position: center;
+}
+
+
+.container {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px #000;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #dddddd;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .caution-top,
+  .caution-bottom {
+    height: 60px;
+    background-size: auto 200px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
