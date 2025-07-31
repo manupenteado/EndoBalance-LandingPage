@@ -80,3 +80,29 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+// Slideshow automático
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    
+    // Esconde todas as imagens
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    
+    // Avança para o próximo slide
+    slideIndex++;
+    
+    // Volta para o primeiro slide se chegar ao fim
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    
+    // Mostra o slide atual
+    slides[slideIndex - 1].style.display = "block";
+    
+    // Muda de slide a cada 5 segundos (5000ms)
+    setTimeout(showSlides, 5000);
+}
