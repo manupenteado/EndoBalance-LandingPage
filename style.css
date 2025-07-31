@@ -216,12 +216,6 @@ section > * {
 /* Responsividade simples */
 @media (max-width: 768px) {
 
- section {
-    padding: 40px 1rem;
-    margin-bottom: 30px;
-  }
-  
-  
 
     html, body {
     width: 100%;
