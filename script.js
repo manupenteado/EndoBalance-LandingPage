@@ -79,30 +79,28 @@ document.addEventListener("DOMContentLoaded", function() {
       menu.style.top = ""; // Reseta o top
     }
   });
-});
-// Slideshow automático
+
+  // Slideshow automático
 let slideIndex = 0;
-showSlides();
+let slides = document.getElementsByClassName("slide");
 
 function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-    
-    // Esconde todas as imagens
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+        slides[i].classList.remove("active", "prev");
     }
-    
+
+    // Slide atual entra
+    slides[slideIndex].classList.add("active");
+
+    // Slide anterior faz efeito de saída para a esquerda
+    let prevIndex = slideIndex === 0 ? slides.length - 1 : slideIndex - 1;
+    slides[prevIndex].classList.add("prev");
+
     // Avança para o próximo slide
-    slideIndex++;
-    
-    // Volta para o primeiro slide se chegar ao fim
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    
-    // Mostra o slide atual
-    slides[slideIndex - 1].style.display = "block";
-    
-    // Muda de slide a cada 5 segundos (5000ms)
-    setTimeout(showSlides, 5000);
+    slideIndex = (slideIndex + 1) % slides.length;
+
+    setTimeout(showSlides, 7000); // 7 segundos por slide
 }
+
+showSlides();
+});
