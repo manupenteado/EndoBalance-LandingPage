@@ -7,6 +7,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background: #eaf6fb; /* azul bem clarinho */
 }
 
 .header {
@@ -116,15 +117,16 @@ body {
   display: none;
 }
 
-
-main {
-  padding-top: 0 !important; /* Remove o padding superior */
+.link-cannect:hover {
+  color: #B9770E !important;
+  text-decoration: underline;
+  transition: color 0.2s;
 }
-
 
 section {
   min-height: 100vh;
   position: relative;
+  scroll-margin-top: 90px; /* ajuste para a altura do seu menu+gold-bar */
 }
 
 /* Papel de parede para desktop */
@@ -154,7 +156,7 @@ section > * {
     width: 100%;
     max-height: 65vh;
     overflow: hidden;
-    min-height: 600px; /* ajuste conforme necessário */
+    min-height: 460px; /* ou remova esta linha para deixar o tamanho automático */
     z-index: 0;
 }
 
@@ -224,7 +226,12 @@ section > * {
   min-height: auto;
 }
 
-
+.titulo-sessao {
+  text-align: center;
+  margin: 1rem 0 0.2rem 0;
+  font-size: 2.5rem;
+  color: #0A4F73;
+}
 
 .inicio-texto {
   max-width: 1100px;
@@ -234,9 +241,8 @@ section > * {
   color: #234;
   text-align: justify;
   font-family: 'Playfair Display', serif;
-  background: rgba(255,255,255,0.85); /* opcional: fundo suave para destacar o texto */
-  border-radius: 12px; /* opcional: cantos arredondados */
-  box-shadow: 0 2px 16px rgba(0,0,0,0.04); /* opcional: sombra leve */
+  background: #eaf6fb; /* azul claro, mais escuro que o fundo */
+  border-radius: 12px;
 }
 
 
@@ -347,5 +353,187 @@ section > * {
     z-index: 1002; /* Acima de tudo */
 
   }
+
+
+    .footer-contato-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 0; /* Remova o margin-left que estava causando o grude */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .footer-contato-info {
+    text-align: left;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+  }
   
 }
+
+footer {
+  background: #0A4F73; /* azul escuro */
+  border-top: 1px solid #174a60;
+  /* Remova text-align: center para não centralizar tudo */
+}
+
+#contato {
+  background: transparent; /* já está no footer */
+  color: #fff;
+  padding: 5rem 0 2rem 0; /* aumente o primeiro valor para mais espaço no topo */
+}
+
+#contato .section-content {
+  background: #174a606f; /* mantém azul claro */
+  width: 100%;
+}
+
+footer section {
+  min-height: unset !important;
+  margin-top: 0 !important;
+}
+
+
+.footer-contato-container {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-contato-info {
+  text-align: left;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+}
+
+.footer-contato-titulo {
+  margin: 0 0 1.2rem 0;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: left; /* Garante alinhamento à esquerda */
+
+}
+
+.footer-contato-info h3 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.footer-contato-info p {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-contato-info a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-contato-info a:hover {
+  color: #B9770E;
+}
+
+.footer-icon {
+  font-size: 1.2rem;
+}
+
+.importacao-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.importacao-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(11, 95, 137, 0.07);
+  padding: 2.5rem 2rem 2rem 2rem;
+  text-align: center;
+  flex: 1 1 300px;
+  max-width: 350px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.importacao-card-numero {
+  width: 64px;
+  height: 64px;
+  background: #0A4F73;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -3.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.importacao-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #0A4F73;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.importacao-card p {
+  color: #0A4F73;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.importacao-btn {
+  background: #0A4F73;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.importacao-btn:hover {
+  background: #084261;
+}
+
+@media (max-width: 900px) {
+  .importacao-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .importacao-card {
+    max-width: 95vw;
+    min-width: 0;
+  }
+}
+
