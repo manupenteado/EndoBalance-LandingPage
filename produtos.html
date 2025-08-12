@@ -34,7 +34,147 @@
     </ul>
   </nav>  <main>
     <section id="produtos">
-      <!-- conteúdo CBD -->
+      <div id="age-verification" class="age-modal">
+        <div class="age-modal-content">
+          <p>
+            Para prosseguir com a visualização desse conteúdo, responda as seguintes perguntas:<br><br>
+            Você tem mais de 21 anos?
+          </p>
+          <div class="age-modal-buttons">
+            <button id="btn-sim" class="age-btn">Sim</button>
+            <button id="btn-nao" class="age-btn">Não</button>
+          </div>
+        </div>
+      </div>
+      <div id="prescription-verification" class="age-modal" style="display:none;">
+        <div class="age-modal-content">
+          <p>
+            Para prosseguir com a visualização desse conteúdo, responda as seguintes perguntas:<br><br>
+            Você tem receita médica?
+          </p>
+          <div class="age-modal-buttons">
+            <button id="btn-presc-sim" class="age-btn">Sim</button>
+            <button id="btn-presc-nao" class="age-btn">Não</button>
+          </div>
+        </div>
+      </div>
+      <div id="age-denied" class="age-modal" style="display:none;">
+        <div class="age-modal-content">
+          <p style="margin-bottom: 1.5rem; font-weight: bold;">Entre em contato conosco.</p>
+          <div style="text-align:left; margin-bottom: 1.2rem;">
+            <p>
+              <span class="footer-icon">📧</span>
+              <a href="mailto:contato@endobalance.life" style="color:#0A4F73; text-decoration:underline;">contato@endobalance.life</a>
+            </p>
+            <p>
+              <span class="footer-icon">📱</span>
+              <a href="tel:+5511999999999" style="color:#0A4F73; text-decoration:underline;">+55 11 99999-9999</a>
+            </p>
+            <p>
+              <span class="footer-icon">📷</span>
+              <a href="https://instagram.com/endo.balance_" target="_blank" style="color:#0A4F73; text-decoration:underline;">@endo.balance_</a>
+            </p>
+          </div>
+          <a href="index.html" class="age-btn" style="display:inline-block; margin-top:1rem;">Voltar para a tela inicial</a>
+        </div>
+      </div>
+      <div id="produtos-conteudo" style="display:none;">
+        <!-- Produto 1 -->
+        <div class="produto-card">
+          <div class="produto-info">
+            <h1 class="produto-titulo">Neuro<br>Cognitive</h1>
+            <h3 class="produto-subtitulo">FOCO, MEMÓRIA E CLAREZA MENTAL</h3>
+            <p>
+              <strong>Neuro Cognitive</strong> é um óleo de CBD Full Spectrum com 3.000mg, formulado para apoiar as funções cognitivas, melhorar a concentração e promover o bem estar neurológico. Sua composição equilibrada é ideal para uso contínuo, contribuindo para mais produtividade e atenção no dia-a-dia.
+            </p>
+            <ul>
+              <li><strong>Indicações:</strong></li>
+              <li>Déficit de atenção e foco</li>
+              <li>Suporte cognitivo em adultos e idosos</li>
+              <li>Prevenção de declínio neurológico</li>
+              <li>Rotina profissional e acadêmica intensa</li>
+            </ul>
+            <ul>
+              <li><strong>Diferenciais:</strong></li>
+              <li>Concentração ideal para uso diário: 3.000 mg</li>
+              <li>Full Spectrum: todos os canabinoides em ação conjunta</li>
+              <li>Alta qualidade e pureza farmacêutica</li>
+              <li>Estímulo à neuroplasticidade e equilíbrio do sistema endocanabinoide</li>
+            </ul>
+            <div class="produto-frase">
+              MAIS CLAREZA. MAIS PRESENÇA.<br>MAIS VOCÊ.
+            </div>
+          </div>
+          <div class="produto-imagem">
+            <img src="./imagens/Neuro-Cognitive.png" alt="Neuro Cognitive Endo Balance">
+              <a href="https://www.cannect.life/" target="_blank" class="age-btn produto-btn-adquirir">Clique aqui para adquirir.</a>
+
+          </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="produto-card">
+          <div class="produto-info">
+            <h1 class="produto-titulo">Neuro<br>Pain Relief</h1>
+            <h3 class="produto-subtitulo">ALÍVIO DA DOR E BEM-ESTAR FÍSICO</h3>
+            <p>
+              <strong>Neuro Pain Relief</strong> traz o melhor do CBD em versão Broad Spectrum, com 3.000 mg por frasco, garantindo potência no alívio da dor sem a presença de THC. É ideal para quem precisa controlar dores crônicas, inflamações e desconfortos musculares ou articulares com segurança.
+            </p>
+            <ul>
+              <li><strong>Indicações:</strong></li>
+              <li>Dores musculares e articulares</li>
+              <li>Fibromialgia</li>
+              <li>Artrites e inflamações</li>
+              <li>Dores neuropáticas</li>
+            </ul>
+            <ul>
+              <li><strong>Diferenciais:</strong></li>
+              <li>Broad Spectrum: ação terapêutica potente, sem THC</li>
+              <li>Alta concentração e absorção eficiente</li>
+              <li>Seguro para uso prolongado</li>
+              <li>Alternativa natural a analgésicos convencionais</li>
+            </ul>
+            <div class="produto-frase">
+              ALÍVIO REAL, COM A CONFIANÇA DE UM PRODUTO DE ALTA PERFORMANCE.
+            </div>
+          </div>
+          <div class="produto-imagem">
+            <img src="./imagens/Neuro-Pain-Relief.png" alt="Neuro Pain Relief Endo Balance">
+              <a href="https://www.cannect.life/" target="_blank" class="age-btn produto-btn-adquirir">Clique aqui para adquirir.</a>
+          </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="produto-card">
+          <div class="produto-info">
+            <h1 class="produto-titulo">Neuro Zen</h1>
+            <h3 class="produto-subtitulo">TRANQUILIDADE E EQUILÍBRIO PARA MENTE E CORPO</h3>
+            <p>
+              <strong>Neuro Zen</strong> é um óleo de CBD Full Spectrum com alta concentração (6.000 mg), desenvolvido para quem busca um efeito mais potente e eficaz no controle da ansiedade, insônia, estresse e agitação mental. Sua fórmula completa preserva todos os canabinoides e terpenos naturais da planta, potencializando os efeitos terapêuticos em sinergia (efeito entourage).
+            </p>
+            <ul>
+              <li><strong>Indicações:</strong></li>
+              <li>Transtornos de ansiedade</li>
+              <li>Estresse crônico</li>
+              <li>Distúrbios do sono</li>
+              <li>Relaxamento muscular</li>
+            </ul>
+            <ul>
+              <li><strong>Diferenciais:</strong></li>
+              <li>Altíssima concentração: 6.000 mg por frasco</li>
+              <li>Full Spectrum: extração completa dos compostos cannabis</li>
+              <li>Ideal para quem precisa de uma resposta terapêutica mais intensa</li>
+            </ul>
+            <div class="produto-frase">
+              O PODER DA NATUREZA EM SUA FORMA MAIS COMPLETA.
+            </div>
+          </div>
+          <div class="produto-imagem">
+            <img src="./imagens/Neuro-Zen.png" alt="Neuro Zen Endo Balance">
+              <a href="https://www.cannect.life/" target="_blank" class="age-btn produto-btn-adquirir">Clique aqui para adquirir.</a>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -46,7 +186,7 @@
         <h3>FALE CONOSCO</h3>
         <p>
           <span class="footer-icon">📧</span>
-          <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a>
+          <a href="mailto:contato@endobalance.life">contato@endobalance.life</a>
         </p>
         <p>
           <span class="footer-icon">📱</span>
@@ -54,7 +194,7 @@
         </p>
         <p>
           <span class="footer-icon">📷</span>
-          <a href="https://instagram.com/seuinsta" target="_blank">@seuinsta</a>
+          <a href="https://instagram.com/endo.balance_" target="_blank">@endo.balance_</a>
         </p>
       </div>
     </div>

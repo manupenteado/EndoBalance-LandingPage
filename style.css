@@ -374,7 +374,35 @@ section > * {
     padding-right: 1.5rem;
     box-sizing: border-box;
   }
+
+
   
+}
+
+@media (max-width: 768px) {
+  .titulo-sessao h2,
+  .titulo-sessao {
+    font-size: 1.4rem !important;
+  }
+  .inicio-texto,
+  .section-content,
+  .section-content p {
+    font-size: 1rem !important;
+  }
+
+  .slideshow-container {
+    margin-bottom: 0.2rem !important;
+    padding-bottom: 0 !important;
+    min-height: 220px !important; /* Reduz a altura mínima do slide */
+  }
+  .titulo-sessao {
+    margin-top: 0.2rem !important;
+  }
+  #inicio .section-content {
+    margin-top: -10px !important; /* Reduz ainda mais o espaço se necessário */
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
 }
 
 footer {
@@ -525,14 +553,179 @@ footer section {
   background: #084261;
 }
 
+.age-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 79, 115, 0.40); /* overlay mais leve */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.age-modal-content {
+  background: #fff;
+  color: #0A4F73;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 2.2rem 2rem 2rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(10, 79, 115, 0.18);
+  max-width: 370px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.age-modal-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.age-btn {
+  background: #fff;
+  color: #0A4F73;
+  border: 2px solid #0A4F73;
+  border-radius: 1.5rem;
+  padding: 0.7rem 2.2rem;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: 0 2px 8px rgba(10, 79, 115, 0.10);
+}
+
+.age-btn:hover {
+  background: #B9770E;
+  color: #fff;
+  border-color: #B9770E;
+}
+
+.produto-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(10, 79, 115, 0.08);
+  padding: 2.5rem 2rem;
+  max-width: 950px;
+  margin: 3rem auto 2rem auto;
+  flex-wrap: wrap;
+}
+
+.produto-info {
+  flex: 2 1 350px;
+  min-width: 300px;
+}
+
+.produto-titulo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #0A4F73;
+  letter-spacing: 0.15em;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+}
+
+.produto-subtitulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #B9770E;
+  letter-spacing: 0.15em;
+  margin: 0 0 1.5rem 0;
+  font-weight: 600;
+}
+
+.produto-info p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #0A4F73;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+.produto-info ul {
+  margin: 0 0 1.2rem 1.2rem;
+  padding: 0;
+  color: #0A4F73;
+  font-size: 1.05rem;
+  font-family: 'Playfair Display', serif;
+  list-style: disc inside;
+}
+
+.produto-info ul li:first-child {
+  font-weight: bold;
+  list-style: none;
+  margin-bottom: 0.2rem;
+}
+
+.produto-frase {
+  margin-top: 2.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #B9770E;
+  text-align: left;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.produto-imagem {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 180px;
+}
+
+.produto-imagem img {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.produto-btn-adquirir {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  background: #fff;
+  color: #0A4F73;
+  border: 2px solid #0A4F73;
+  border-radius: 1.5rem;
+  padding: 0.7rem 2.2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: 0 2px 8px rgba(10, 79, 115, 0.10);
+}
+
+.produto-btn-adquirir:hover {
+  background: #B9770E;
+  color: #fff;
+  border-color: #B9770E;
+}
+
 @media (max-width: 900px) {
-  .importacao-cards {
-    flex-direction: column;
-    gap: 1.5rem;
+  .produto-card {
+    flex-direction: column-reverse;
     align-items: center;
+    padding: 1.5rem 0.5rem;
+    gap: 1.5rem;
   }
-  .importacao-card {
-    max-width: 95vw;
+  .produto-imagem {
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .produto-info {
     min-width: 0;
   }
 }

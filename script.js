@@ -85,22 +85,73 @@ let slideIndex = 0;
 let slides = document.getElementsByClassName("slide");
 
 function showSlides() {
+    if (!slides.length) return; // <-- Adicione esta linha
     for (let i = 0; i < slides.length; i++) {
         slides[i].classList.remove("active", "prev");
     }
-
-    // Slide atual entra
     slides[slideIndex].classList.add("active");
-
-    // Slide anterior faz efeito de saída para a esquerda
     let prevIndex = slideIndex === 0 ? slides.length - 1 : slideIndex - 1;
     slides[prevIndex].classList.add("prev");
-
-    // Avança para o próximo slide
     slideIndex = (slideIndex + 1) % slides.length;
-
-    setTimeout(showSlides, 7000); // 7 segundos por slide
+    setTimeout(showSlides, 7000);
 }
 
 showSlides();
+
+  // Verificação de idade
+  setTimeout(function() {
+  const btnSim = document.getElementById('btn-sim');
+  const btnNao = document.getElementById('btn-nao');
+  const ageVerification = document.getElementById('age-verification');
+  const prescriptionVerification = document.getElementById('prescription-verification');
+  const btnPrescSim = document.getElementById('btn-presc-sim');
+  const btnPrescNao = document.getElementById('btn-presc-nao');
+  const produtosConteudo = document.getElementById('produtos-conteudo');
+  const ageDenied = document.getElementById('age-denied');
+
+  if (
+    btnSim && btnNao && ageVerification &&
+    prescriptionVerification && btnPrescSim && btnPrescNao &&
+    produtosConteudo && ageDenied
+  ) {
+    btnSim.onclick = function() {
+      ageVerification.style.display = 'none';
+      prescriptionVerification.style.display = 'flex';
+    };
+    btnNao.onclick = function() {
+      ageVerification.style.display = 'none';
+      ageDenied.style.display = 'flex';
+    };
+    btnPrescSim.onclick = function() {
+      prescriptionVerification.style.display = 'none';
+      produtosConteudo.style.display = 'block';
+    };
+    btnPrescNao.onclick = function() {
+      prescriptionVerification.style.display = 'none';
+      ageDenied.style.display = 'flex';
+    };
+  } else {
+    console.log('Botões ou caixas de verificação não encontrados no DOM.');
+  }
+}, 100); // 100ms de delay
+
+  // Modal de contato na sessão de importação (info.html)
+  const importacaoBtns = document.querySelectorAll('.importacao-btn');
+  const contatoModal = document.getElementById('importacao-contato-modal');
+
+  if (importacaoBtns.length && contatoModal) {
+    importacaoBtns.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        contatoModal.style.display = 'flex';
+      });
+    });
+
+    // Fechar modal ao clicar fora do conteúdo
+    contatoModal.addEventListener('click', function(e) {
+      if (e.target === contatoModal) {
+        contatoModal.style.display = 'none';
+      }
+    });
+  }
 });
